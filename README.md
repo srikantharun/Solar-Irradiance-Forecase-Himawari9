@@ -194,6 +194,14 @@ Key log messages to watch for:
 - `Cloud cover over Coimbatore region: Z%` - Current cloud coverage percentage
 - `Using estimated pixel size: X km` - Should be a reasonable value (typically 0.2-1.0 km)
 
+## Workflow 
+![image](https://github.com/user-attachments/assets/c85cd11c-0363-4f3a-9e8d-0f621391e251)
+
+Shown below is process flow diagram
+
+![image](https://github.com/user-attachments/assets/7a36ff6e-f0e3-4f7d-87f7-dc7f21e1590b)
+
+
 ## Further Development
 
 Potential enhancements for future versions:
