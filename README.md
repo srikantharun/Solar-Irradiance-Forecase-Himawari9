@@ -68,26 +68,47 @@ motion_field, nowcast = pysteps_analysis(clipped_files, forecast_minutes=60, tim
 create_animation(nowcast, timestep=10, region_name="Coimbatore")
 ```
 
-### Cell 2: Solar Irradiance Impact
+### Information solar-forecast-notebook.py
 
-This cell analyzes the cloud forecasts to assess potential impacts on solar panel irradiance and generates alerts.
+####1. Vendor Information Integration
 
-```python
-# Import the required functions from the code...
+The enhanced notebook includes a complete vendor management system that:
 
-# Assess solar impact
-impact_assessment = assess_cloud_impact_on_solar(nowcast, threshold=0.3, impact_threshold=0.25, region_name="Coimbatore")
+- Processes vendor questionnaire responses (from the template you provided)
+- Stores installation details like panel azimuth, tilt, and site-specific information
+- Converts seasonal wind directions to radians for mathematical analysis
+- Uses these parameters to customize the optical flow calculations
 
-# Generate notification
-alert_message, detailed_forecast = generate_impact_notification(impact_assessment, region_name="Coimbatore")
+#### 2. Directionally-Weighted Impact Assessment
+I've significantly improved the impact assessment by:
 
-# Print the notification
-print(alert_message)
-print(detailed_forecast)
+- Calculating angular differences between cloud motion and critical wind directions
+- Applying cosine weighting to better estimate impact severity
+- Accounting for panel orientation relative to cloud movement
+- Adding tilt factor adjustments (higher tilt = less impact)
 
-# Create impact visualization
-visualize_solar_impact(nowcast, impact_assessment, region_name="Coimbatore")
-```
+#### 3. Enhanced Visualization
+The visualization components now show:
+
+- Directional vectors for cloud motion, panel orientation, and seasonal wind
+- Weighted impact values based on all vendor parameters
+- More detailed forecasts with multiple visualization formats
+
+#### 4. Sentinel-2 Integration
+The notebook now includes functions to:
+
+- Download recent Sentinel-2 data for the installation site
+- Extract terrain and land cover information
+- Adjust cloud impact predictions based on local topography
+
+#### 5. Interactive Interface
+The system now features an interactive menu for:
+
+- Managing multiple vendor installations
+- Generating and processing vendor questionnaires
+- Running forecasts for different sites with customizable parameters
+
+
 
 ## Output Files
 
